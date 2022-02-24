@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CenterComponent } from './components/center/center.component';
-import { home, search, library, heart, rss, plusCircle,chevronDown, HeroIconModule } from 'ng-heroicon';
+import { home, search, library, heart, rss, plusCircle, chevronDown, HeroIconModule } from 'ng-heroicon';
 
-const icon = HeroIconModule.withIcons({
+const iconModule = HeroIconModule.withIcons({
   home,
   search,
   library,
@@ -32,7 +33,8 @@ const icon = HeroIconModule.withIcons({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    icon
+    iconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
